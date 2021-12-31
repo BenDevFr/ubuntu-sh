@@ -10,37 +10,8 @@ sudo wget https://i.imgur.com/ZWItHKf.jpeg
 sudo mv ZWItHKf.jpeg honeycomb.jpeg
 gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/honeycomb.jpeg
 
-
-#Creation des alias
-{
-echo "#Faire  \" .. \" au lieu de cd .."
-echo "alias ..='cd ..'"
-echo ""
-echo "#pour ouvrir le dossier html en raccourci tape www"
-echo "alias www='cd /var/www/html/'"
-echo ""
-echo "#gs pour git status"
-echo "alias gs='git status'"
-echo ""
-echo "#ça c'est une connerie"
-echo "alias gps=\"echo 'Vous etes ici -->*<--'\""
-echo ""
-echo "#reload-term pour le reload du term"
-echo "alias reload-term='. ~/.bashrc'"
-echo ""
-echo "#pour ouvrir le fichier de perso du term"
-echo "alias edit-term='code ~/.bash_aliases'"
-echo ""
-echo "#afficher la liste des alias ci-dessus"
-echo "alias alias-list='echo .. = cd .."
-echo "echo www = cd /var/www/html/"
-echo "echo gs = git status"
-echo "echo reload-term = . ~/.bashrc"
-echo "echo edit-term = code ~/.bash_aliases'"
-} >blork
-#
-sudo mv blork ~/.bash_aliases
-sudo . ~/.bashrc
+#Script de creation des aliases
+sh alias.sh
 #Suppression des jeux et appli useless
 
 
