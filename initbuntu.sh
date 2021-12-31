@@ -1,4 +1,11 @@
 sudo apt update
+
+#Installation d'un outil indispensable
+sudo apt install cowsay
+cowsay "Salut jeune dévellopeur ? tu aimes les scripts qui font tout à ta place? j'crois la question elle est vite répondu ! ! ! "
+sleep 5
+clear
+
 sudo apt upgrade
 sudo wget https://az764295.vo.msecnd.net/stable/899d46d82c4c95423fb7e10e68eba52050e30ba3/code_1.63.2-1639562499_amd64.deb
 sudo apt install ./code_1.63.2-1639562499_amd64.deb
@@ -40,7 +47,6 @@ echo "echo edit-term = code ~/.bash_aliases'"
 
 mv .bash_aliases ~/.bash_aliases
 . ~/.bashrc
-
 
 #Suppression des jeux et appli useless
 
@@ -111,3 +117,6 @@ sudo apt-get install insomnia
 
 sudo apt autoclean
 sudo apt autoremove
+
+cowsay "N'oublies pas de relancer le terminal pour beneficier des Aliases fraichement creer ♥ 
+ Meuh!!!!!!!!!!!!!!!!!!!!"
