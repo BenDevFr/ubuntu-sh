@@ -40,6 +40,7 @@ echo "echo edit-term = code ~/.bash_aliases'"
 } >blork
 #
 sudo mv blork ~/.bash_aliases
+. ~/.bashrc
 #Suppression des jeux et appli useless
 
 
