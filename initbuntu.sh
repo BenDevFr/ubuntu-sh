@@ -118,5 +118,8 @@ sudo apt-get install insomnia
 sudo apt autoclean
 sudo apt autoremove
 
-cowsay "N'oublies pas de relancer le terminal pour beneficier des Aliases fraichement creer ♥ 
+cowsay "N'oublies pas de relancer le terminal pour beneficier des Aliases fraichement creer .
+tu peux aussi configurer Git avec l'aide de kourou 
  Meuh!!!!!!!!!!!!!!!!!!!!"
+echo ""
+echo https://kourou.oclock.io/ressources/fiche-recap/git-et-github/
