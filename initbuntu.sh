@@ -4,14 +4,44 @@ sudo wget https://az764295.vo.msecnd.net/stable/899d46d82c4c95423fb7e10e68eba520
 sudo apt install ./code_1.63.2-1639562499_amd64.deb
 sudo rm code_1.63.2-1639562499_amd64.deb
 
-#! Modification du bckgrd
+# Modification du bckgrd
 cd /usr/share/backgrounds/
 sudo wget https://i.imgur.com/ZWItHKf.jpeg
 sudo mv ZWItHKf.jpeg honeycomb.jpeg
 gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/honeycomb.jpeg
 
-#Script de creation des aliases
-sh alias.sh
+#Creation des alias
+{
+echo "#Faire  \" .. \" au lieu de cd .."
+echo "alias ..='cd ..'"
+echo ""
+echo "#pour ouvrir le dossier html en raccourci tape www"
+echo "alias www='cd /var/www/html/'"
+echo ""
+echo "#gs pour git status"
+echo "alias gs='git status'"
+echo ""
+echo "#ça c'est une connerie"
+echo "alias gps=\"echo 'Vous etes ici -->*<--'\""
+echo ""
+echo "#reload-term pour le reload du term"
+echo "alias reload-term='. ~/.bashrc'"
+echo ""
+echo "#pour ouvrir le fichier de perso du term"
+echo "alias edit-term='code ~/.bash_aliases'"
+echo ""
+echo "#afficher la liste des alias ci-dessus"
+echo "alias alias-list='echo .. = cd .."
+echo "echo www = cd /var/www/html/"
+echo "echo gs = git status"
+echo "echo reload-term = . ~/.bashrc"
+echo "echo edit-term = code ~/.bash_aliases'"
+} >.bash_aliases
+
+mv .bash_aliases ~/.bash_aliases
+. ~/.bashrc
+
+
 #Suppression des jeux et appli useless
 
 
