@@ -39,9 +39,9 @@ echo "echo reload-term = . ~/.bashrc"
 echo "echo edit-term = code ~/.bash_aliases'"
 } >blork
 #
-
-#Suppression des jeux et appli useless
 sudo mv blork ~/.bash_aliases
+#Suppression des jeux et appli useless
+
 
 sudo apt remove  gnome-mahjongg -y
 #
@@ -85,6 +85,25 @@ sudo mv composer.phar /usr/local/bin/composer
 
 #install MySQL
 sudo apt install mysql-server
+
+
+#Install phpMyAdmin
+sudo apt-get install phpmyadmin
+
+#Install zip
+sudo apt-get install zip
+
+#Install insomnia
+echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
+    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+
+# Refresh repository sources and install Insomnia
+sudo apt-get update
+sudo apt-get install insomnia
+
+#Creation d'un raccourci vers www sur le bureau
+ cd ~/Bureau
+ ln -s /var/www/html/
 
 
 sudo apt autoclean
