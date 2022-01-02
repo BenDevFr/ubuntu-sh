@@ -92,6 +92,12 @@ php -r "unlink('composer-setup.php');"
 sudo mv composer.phar /usr/local/bin/composer
 
 
+# apache configuration
+sudo a2enmod rewrite
+sudo php -r "file_put_contents('/etc/apache2/apache2.conf', str_replace('AllowOverride None', 'AllowOverride All', file_get_contents('/etc/apache2/apache2.conf')));"
+sudo service apache2 restart
+
+
 #install MySQL
 sudo apt install mysql-server
 
