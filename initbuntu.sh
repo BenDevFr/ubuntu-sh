@@ -82,7 +82,7 @@ sudo rm code_1.63.2-1639562499_amd64.deb
 #https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04
 sudo apt-get install apache2 -y
 sudo apt install php libapache2-mod-php php-mysql -y
-sudo chown -R $USER:$USER /var/www/
+sudo chown -R $USER:www-data /var/www/
 
 #Install Composer
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
