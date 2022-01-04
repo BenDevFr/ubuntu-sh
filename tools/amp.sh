@@ -84,6 +84,16 @@ configureMysql() {
     sudo mysql -e"GRANT ALL PRIVILEGES ON * . * TO '$BDD_USER_NAME'@'$BDD_REMOTE_HOST';" mysql
     sudo mysql -e "FLUSH PRIVILEGES;"
 
+    {
+        echo "Rappel de vos infos mysql"
+        echo ""
+        echo "Host : $BDD_REMOTE_HOST"
+        echo "Identifiant : $BDD_USER_NAME"
+        echo "Mdp : $BDD_USER_PASSWORD"
+    } >database.txt
+    cowsay "Dans le fichier docs/database.txt vous retrouverez vos identifiants de la base de données"
+    sleep 5
+
     #sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
     sudo service mysql restart
 }

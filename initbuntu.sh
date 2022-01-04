@@ -25,11 +25,18 @@ sh ./tools/amp.sh
  ln -s /var/www/html/
 
 
-sudo apt autoclean
-sudo apt autoremove
+sudo apt autoclean -y
+sudo apt autoremove -y
 
-cowsay "N'oublies pas de relancer le terminal pour beneficier des Aliases fraichement creer .
-tu peux aussi configurer Git avec l'aide de kourou 
- Meuh!!!!!!!!!!!!!!!!!!!!"
+clear
+
 echo ""
-echo https://kourou.oclock.io/ressources/fiche-recap/git-et-github/
+echo "N'oublies pas de relancer le terminal pour beneficier des Aliases fraichement creer ."
+echo ""
+echo "Tu peux aussi configurer Git avec l'aide de kourou "
+echo ""
+echo "Dans le fichier docs/database.txt vous retrouverez vos identifiants de la base de données et la liste des aliases. "
+echo ""
+echo "https://kourou.oclock.io/ressources/fiche-recap/git-et-github/"
+
+cowsay "Meuh ! ! ! ! ! ! ! ! ! "

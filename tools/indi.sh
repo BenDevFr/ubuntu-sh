@@ -9,10 +9,10 @@ indi() {
  sudo apt-get install -y unzip
 
  #Git
-sudo apt install git
+sudo apt install git -y
 
 #Install CopyQ pour la gestion du presse papier
-sudo apt install copyq
+sudo apt install copyq -y
 
 #Install Chrome
 sudo sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
