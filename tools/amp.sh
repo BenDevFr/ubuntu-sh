@@ -13,9 +13,10 @@ configureApache() {
 
     #configuration des droits
 
-    sudo chown -R $USER_NAME:www-data /var/www/html
-    sudo chmod -R 775 /var/www/html
-    sudo chmod g+s /var/www/html
+    #sudo chown -R $USER_NAME:www-data /var/www/html
+    #sudo chmod -R 775 /var/www/html
+    #sudo chmod g+s /var/www/html
+    sudo chown -R $USER:www-data /var/www/
     sudo rm -rf /var/www/html/index.html
     sudo service apache2 restart
 
@@ -37,8 +38,8 @@ installPHP() {
     sudo apt-get install -y php-intl
     sudo apt-get install -y php-curl
     sudo apt-get install -y php-imagick
-     #création d'un fichier phpinfo pour vérifier la configuration=========
-    sudo echo "<?php phpinfo(); " > /var/www/html/phpinfo.php
+    #création d'un fichier phpinfo pour vérifier la configuration=========
+    sudo echo "<?php phpinfo(); " >/var/www/html/phpinfo.php
 
     #composer
     #attention c'est une installation bourrine de composer...
@@ -46,7 +47,7 @@ installPHP() {
     php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
     php composer-setup.php --quiet
     sudo mv composer.phar /usr/local/bin/composer
-    
+
     sudo service apache2 restart
 }
 
@@ -59,17 +60,17 @@ installMySQL() {
     sudo apt install mysql-server
 
     #installation adminer
-    mkdir /var/www/html/adminer
-    wget https://github.com/vrana/adminer/releases/download/v4.8.0/adminer-4.8.0.php
-    mv adminer-4.8.0.php /var/www/html/adminer/index.php
-    }
+    sudo mkdir /var/www/html/adminer
+    sudo wget https://github.com/vrana/adminer/releases/download/v4.8.0/adminer-4.8.0.php
+    sudo mv adminer-4.8.0.php /var/www/html/adminer/index.php
+}
 
 configureMysql() {
-    USER_NAME=$USER
+    #USER_NAME=$USER
     # BDD_USER_NAME="explorateur"
     # BDD_USER_PASSWORD="explorateur"
     # BDD_REMOTE_HOST="remote_host"
-    read -p "BDD Nom ? " BDD_USER_NAME
+    read -p "BDD Identifiant ? " BDD_USER_NAME
     echo $BDD_USER_NAME
     read -p "BDD password ? " BDD_USER_PASSWORD
     echo $BDD_USER_PASSWORD
@@ -79,12 +80,13 @@ configureMysql() {
     #configuration mysql=====================
     #sudo mysql -e"CREATE USER '$BDD_USER_NAME'@'localhost' IDENTIFIED BY '$BDD_USER_PASSWORD';" mysql
     #sudo mysql -e"GRANT ALL PRIVILEGES ON *.* TO '$BDD_USER_NAME'@'localhost';" mysql
-    sudo mysql -e"CREATE USER '$BDD_USER_NAME'@'%' IDENTIFIED BY '$BDD_USER_PASSWORD';" mysql
-    sudo mysql -e"GRANT ALL PRIVILEGES ON *.* TO '$BDD_USER_NAME'@'%';" mysql
+    sudo mysql -e"CREATE USER '$BDD_USER_NAME'@'$BDD_REMOTE_HOST' IDENTIFIED BY '$BDD_USER_PASSWORD';" mysql
+    sudo mysql -e"GRANT ALL PRIVILEGES ON * . * TO '$BDD_USER_NAME'@'$BDD_REMOTE_HOST';" mysql
+    sudo mysql -e "FLUSH PRIVILEGES;"
+
     #sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
     sudo service mysql restart
 }
-
 
 installApache
 configureApache

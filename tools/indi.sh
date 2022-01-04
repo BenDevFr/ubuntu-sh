@@ -11,6 +11,9 @@ indi() {
  #Git
 sudo apt install git
 
+#Install CopyQ pour la gestion du presse papier
+sudo apt install copyq
+
 #Install Chrome
 sudo sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
 sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
