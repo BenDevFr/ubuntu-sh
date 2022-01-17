@@ -57,7 +57,7 @@ configurePHP() {
 }
 
 installMySQL() {
-    sudo apt install mysql-server
+    sudo apt install mysql-server -y
 
     #installation adminer
     sudo mkdir /var/www/html/adminer
