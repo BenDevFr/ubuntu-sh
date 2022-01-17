@@ -90,10 +90,8 @@ configureMysql() {
         echo "Host : $BDD_REMOTE_HOST"
         echo "Identifiant : $BDD_USER_NAME"
         echo "Mdp : $BDD_USER_PASSWORD"
-    } >database.txt
+    } >./docs/database.txt
     createDbTxt
-    cowsay "Dans le fichier docs/database.txt vous retrouverez vos identifiants de la base de données"
-    sleep 5
 
     #sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
     sudo service mysql restart
