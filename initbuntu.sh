@@ -35,7 +35,7 @@ echo "N'oublies pas de relancer le terminal pour beneficier des Aliases fraichem
 echo ""
 echo "Tu peux aussi configurer Git avec l'aide de kourou "
 echo ""
-echo "Dans le fichier docs/database.txt vous retrouverez vos identifiants de la base de données et la liste des aliases. "
+echo "Dans le dossier docs vous retrouverez vos identifiants de la base de données et la liste des aliases. "
 echo ""
 echo "https://kourou.oclock.io/ressources/fiche-recap/git-et-github/"
 
