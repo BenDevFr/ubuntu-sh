@@ -1,4 +1,4 @@
-{
+createAlias() {
 echo "#Faire  \" .. \" au lieu de cd .."
 echo "alias ..='cd ..'"
 echo ""
@@ -25,5 +25,7 @@ echo "echo reload-term = . ~/.bashrc"
 echo "echo edit-term = code ~/.bash_aliases'"
 } >.bash_aliases
 
+createAlias
+cp .bash_aliases ./docs/alias.txt
 mv .bash_aliases ~/.bash_aliases
 . ~/.bashrc
