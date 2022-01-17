@@ -90,7 +90,7 @@ configureMysql() {
         echo "Host : $BDD_REMOTE_HOST"
         echo "Identifiant : $BDD_USER_NAME"
         echo "Mdp : $BDD_USER_PASSWORD"
-    } >../docs/database.txt
+    } >./docs/database.txt
     createDbTxt
 
     #sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
