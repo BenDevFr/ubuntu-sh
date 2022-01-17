@@ -57,6 +57,8 @@ configurePHP() {
 }
 
 installMySQL() {
+    #https://doc.ubuntu-fr.org/mysql
+
     sudo apt install mysql-server -y
 
     #installation adminer
