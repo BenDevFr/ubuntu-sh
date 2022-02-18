@@ -20,14 +20,12 @@ echo '    <meta charset="UTF-8">'
 echo '    <meta http-equiv="X-UA-Compatible" content="IE=edge">'
 echo '    <meta name="viewport" content="width=device-width, initial-scale=1.0">'
 echo '    <title>Document</title>'
-echo '    <link rel="stylesheet" href="/assets/scss/main.scss">'
-echo ''
 echo '</head>'
 echo ''
 echo '<body>'
 echo ''
 echo '    <!-- Loading main.js -->'
-echo  '   <script src="main.js"></script>'
+echo  '   <script src="assets/js/main.js"></script>'
 echo ''
 echo '</body>'
 echo ''
@@ -40,7 +38,7 @@ echo "console.log('%c' + \"main.js loaded\", 'color: #0bf; font-size: 1rem; back
 echo ""
 echo "// Chargement de reset.css dans ma page html"
 echo "import 'reset-css';"
-} >main.js
+} >assets/js/main.js
 
 createMainSCSS(){
 echo "@import" 
@@ -54,7 +52,7 @@ echo ""
 createMixins(){    
 echo "@mixin for-screen-small {"
 echo "    @media (min-width: \$screen-small) {"
-echo "        body {"
+echo "        :root {"
 echo "            @content;"
 echo "        }"
 echo "    }"
@@ -62,7 +60,7 @@ echo "}"
 echo ""
 echo "@mixin for-screen-medium {"
 echo "    @media (min-width: \$screen-medium) {"
-echo "        body {"
+echo "        :root {"
 echo "            @content;"
 echo "        }"
 echo "    }"
@@ -70,7 +68,15 @@ echo "}"
 echo ""
 echo "@mixin for-screen-large {"
 echo "    @media (min-width: \$screen-large) {"
-echo "        body {"
+echo "        :root {"
+echo "            @content;"
+echo "        }"
+echo "    }"
+echo "}"
+echo ""
+echo "@mixin for-screen-large-xl {"
+echo "    @media (min-width: \$screen-large-xl) {"
+echo "        :root {"
 echo "            @content;"
 echo "        }"
 echo "    }"
@@ -92,6 +98,7 @@ echo "//Size For MediaQueries"
 echo "\$screen-small:0;"
 echo "\$screen-medium:500px;"
 echo "\$screen-large:800px;"
+echo "\$screen-large-xl:975px;"
 } >assets/scss/utils/_variables.scss
 
 createDirectory
