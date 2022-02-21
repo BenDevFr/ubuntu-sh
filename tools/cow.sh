@@ -6,3 +6,5 @@ clear
 }
 
 installCowsay
+
+sudo apt install sl

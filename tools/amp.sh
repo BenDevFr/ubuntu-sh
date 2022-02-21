@@ -3,13 +3,12 @@ installApache() {
     sudo apt-get install -y apache2
     #activation du mod rewrite pour les htaccess=======
     sudo a2enmod rewrite
-    sudo php -r "file_put_contents('/etc/apache2/apache2.conf', str_replace('AllowOverride None', 'AllowOverride All', file_get_contents('/etc/apache2/apache2.conf')));"
     sudo service apache2 restart
 }
 
 configureApache() {
     #configuration apache
-    sudo php -r "file_put_contents('/etc/apache2/apache2.conf', str_replace('AllowOverride None', 'AllowOverride All', file_get_contents('/etc/apache2/apache2.conf')));"
+    
 
     #configuration des droits
 
@@ -38,6 +37,7 @@ installPHP() {
     sudo apt-get install -y php-intl
     sudo apt-get install -y php-curl
     sudo apt-get install -y php-imagick
+    sudo php -r "file_put_contents('/etc/apache2/apache2.conf', str_replace('AllowOverride None', 'AllowOverride All', file_get_contents('/etc/apache2/apache2.conf')));"
     #création d'un fichier phpinfo pour vérifier la configuration=========
     sudo echo "<?php phpinfo(); " >/var/www/html/phpinfo.php
 
