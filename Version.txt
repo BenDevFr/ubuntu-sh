@@ -1,0 +1,1 @@
+V 1.5 -- suppresion du dossier WIP - Ajout et clean des alias - ajout du paquets SL dans l'installeur - Bugfix dans le fichier amp (on appelait une fonction php avant d'avoir installer php *facepalm*
