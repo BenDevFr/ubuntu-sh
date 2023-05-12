@@ -17,4 +17,4 @@ Utilisation :
 
 Ouvrir le terminal
 
-sh initbuntu.sh
+sh initbuntu.sh 
